@@ -1,0 +1,24 @@
+name: Elements Plugin
+authors: [RedKaneChironic, DiamondDudeDD]
+description: A plugin that allows you to get elements inside Minecraft
+version: 1.0.0
+website: MySixSenses.Github.io
+load: POSTWORLD
+main: io.github.mysixsenses.ElementPlugin
+database: false
+depend: []
+prefix: Elements Plugin Bot
+softdepend: []
+loadbefore: []
+commands:
+   summonhydrogen:
+      description: Allows you to set the block in front of you to hydrogen-like stone
+      aliases: [sethydrogen, summonh, seth]
+permissions:
+   ElementPlugin.*:
+     description: Gives access to all Inferno commands
+     children:
+       ElementPlugin.summonhydrogen: true
+   ElementPlugin.summonhydrogen:
+      description: Summons a Hydrogen block!
+      default: op
