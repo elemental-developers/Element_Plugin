@@ -1,10 +1,10 @@
-name: Elements Plugin
+name: Elements-Plugin
 authors: [RedKaneChironic, DiamondDudeDD]
 description: A plugin that allows you to get elements inside Minecraft
 version: 1.0.0
 website: MySixSenses.Github.io
 load: POSTWORLD
-main: io.github.mysixsenses.ElementPlugin
+main: io.github.mysixsenses.ElementPlugin.Main
 database: false
 depend: []
 prefix: Elements Plugin Bot
