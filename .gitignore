@@ -2,6 +2,7 @@
 *.class
 #Eclipse compiler settings
 /.settings
+.settings
 # Log file
 *.log
 
