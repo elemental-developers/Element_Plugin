@@ -16,7 +16,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Main extends JavaPlugin implements Listener{
-	HashSet<Block> set;
+	HashSet<Block> set = new HashSet<Block>();
 	 public void onEnable() {
 	        Bukkit.getServer().getPluginManager().registerEvents(this, this);
 	        System.out.println("Starting Elements Plugin by RedKaneChironic");
@@ -82,7 +82,7 @@ public final class Main extends JavaPlugin implements Listener{
 				return false;
 			}
 			Player p = (Player) sender;
-			if (p.hasPermission("ElementPlugin.summonhydrogen")) {
+			if (p.hasPermission("summonhydrogen.use")) {
 				String Direction = getCardinalDirection(p);
 				Location loc = p.getLocation();
 				switch(Direction) {
