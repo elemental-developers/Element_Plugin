@@ -3,6 +3,7 @@
 #Eclipse compiler settings
 /.settings
 .settings
+*.project
 # Log file
 *.log
 
