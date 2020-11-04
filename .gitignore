@@ -4,6 +4,7 @@
 /.settings
 .settings
 *.project
+.project
 # Log file
 *.log
 
