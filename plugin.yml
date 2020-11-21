@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: Elements-Plugin
 authors: [RedKaneChironic, DiamondDudeDD]
 description: A plugin that allows you to get elements inside Minecraft
@@ -22,3 +23,27 @@ permissions:
    ElementPlugin.summonhydrogen:
       description: Summons a Hydrogen block!
       default: op
+=======
+name: ElementsPluginRewrite
+authors: [RedKaneChironic, DiamondDudeDD]
+version: 1.0.0
+website: ElementalDevelopers.github.io
+load: POSTWORLD
+main: io.github.elementaldevelopers.ElementsPluginRewrite.Main
+database: false
+depend: []
+prefix: Charles
+loadbefore: []
+softdepend: []
+api-version: 1.16
+commands:
+  summonhydrogen:
+    description: Gives you a hydrogen block!
+permissions:
+  ElementsPluginRewrite.*:
+    description: Gives access to all commands
+    children:
+      ElementsPluginRewrite.summonhydrogen: true
+  ElementsPluginRewrite.summonhydrogen:
+    default: op
+>>>>>>> 9208459 (First Working Version 1.16.3 and Java 8!)
