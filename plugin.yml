@@ -1,4 +1,5 @@
 name: Elements-Plugin
+author: RedKaneChironic
 authors: [RedKaneChironic, DiamondDudeDD]
 description: A plugin that allows you to get elements inside Minecraft
 version: 1.0.0
@@ -12,13 +13,43 @@ loadbefore: []
 api-version: 1.16
 commands:
    summonhydrogen:
-      description: Allows you to give yourself a hydrogen block!
+      description: Gives you a hydrogen block!
       aliases: [giveh, geth, gethydrogen]
+      permission: ElementPlugin.summonhydrogen
+   summonhelium:
+      description: Gives you a helium block!
+      aliases: [givehe, gethe, gethelium]
+      permission: ElementPlugin.summonhelium
+   summonlithium:
+      description: Gives you a lithium block!
+      aliases: [giveli, getli, getlithium]
+      permission: ElementPlugin.summonlithium
+   summonberyllium:
+      description: Gives you a lithium block!
+      aliases: [givebe, getbe, getberyllium]
+      permission: ElementPlugin.summonberyllium   
+   summonboron:
+      description: Gives you a lithium block!
+      aliases: [giveb, getb, getboron]
+      permission: ElementPlugin.summonboron      
 permissions:
    ElementPlugin.*:
      description: Gives access to all elementsplugin commands
+     default: op
      children:
        ElementPlugin.summonhydrogen: true
    ElementPlugin.summonhydrogen:
       description: Summons a Hydrogen block!
+      default: op
+   ElementPlugin.summonhelium:
+      description: Summons a Helium block!
+      default: op
+   ElementPlugin.summonlithium:
+      description: Summons a Lithium block!
+      default: op
+   ElementPlugin.summonberyllium:
+      description: Summons a Beryllium block!
+      default: op
+   ElementPlugin.summonboron:
+      description: Summons a Beryllium block!
       default: op
