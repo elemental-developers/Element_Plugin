@@ -1,3 +1,24 @@
+/*
+ * Copyright (C) 2020 2020 elementaldevelopers on github.com
+ *
+ * Licensed under the MIT License:
+ * Copyright (c) 2020 elementaldevelopers on github.com
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
 package io.github.elementaldevelopers.elementsplugin;
 
 import java.io.BufferedReader;
@@ -15,7 +36,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.block.Biome;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.Skull;
@@ -25,6 +45,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+//import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
@@ -66,7 +87,7 @@ public final class Main extends JavaPlugin implements Listener{
 	 * @author zylem on spigotmc.org
 	 * <br> Source https://www.spigotmc.org/threads/tutorial-player-skull-with-custom-skin.143323/
 	 * Edited by the ElementalDevelopers
-	 * @param url
+	 * @param username uuid OverwriteURL
 	 * @return head
 	 */
 	public ItemStack getSkull(String username, UUID uuid, String OverwriteURL) {
@@ -184,6 +205,8 @@ public final class Main extends JavaPlugin implements Listener{
 			return giveElement(ChatColor.GRAY, "Aluminum", sender, args, UUID.fromString("e191a8f3-5a26-4c3b-9265-33f53ee994e5"), "", "todotodo");
 		} else if (command(cmd, "summonSilicon")) {
 			return giveElement(ChatColor.GRAY, "Silicon", sender, args, UUID.fromString("7673abcb-6046-4729-92a6-1ce11df607ca"), "", "todotodo");
+		} else if (command(cmd, "summonVioletPhosphorus")) {
+			return giveElement(ChatColor.DARK_PURPLE, "Violet Phosphorus", sender, args, UUID.fromString("f98f76cd-2f10-4881-9b7d-6a877f5843a4"), "", "todotodo");
 		} else if (command(cmd, "summonRedPhosphorus")) {
 			return giveElement(ChatColor.RED, "Red Phosphorus", sender, args, UUID.fromString("d7221687-b882-4003-aaa9-d5b8f97395b8"), "", "todotodo");
 		} else if (command(cmd, "summonWhitePhosphorus")) {
@@ -385,43 +408,243 @@ public final class Main extends JavaPlugin implements Listener{
 //		}
 		return false;
 	}
+	public boolean matchingSkull(Skull skull, String uuid) {
+		return skull.getOwningPlayer() == Bukkit.getOfflinePlayer(UUID.fromString(uuid));
+	}
+//	TODO: Make Radioactive Elements disappear after a short period
+//	@EventHandler
+//	public void BlockPlace(BlockPlaceEvent e) {
+//		Block b = e.getBlock();
+//		if ((b.getType() == Material.PLAYER_HEAD|| b.getType() == Material.PLAYER_WALL_HEAD) && b.getState() instanceof Skull){
+//			Skull bl = (Skull) b.getState();
+//			if (matchingSkull(bl, "7b901927-0510-41fa-be28-f9cbc417224f")) {
+//				Bukkit.getServer().getScheduler().runTaskLater(this, new Runnable()
+//			      {
+//			        @Override
+//			        public void run()
+//			        {
+//			            bl.setType(Material.AIR);
+//			            
+//			        }
+//			      }, (20*60));
+//			}
+//		}
+//	}
 	@EventHandler
 	public void onBlockBreak(BlockBreakEvent e) {
 		Block block = e.getBlock();
 		Location loc = block.getLocation();
 		if ((block.getType() == Material.PLAYER_HEAD|| block.getType() == Material.PLAYER_WALL_HEAD) && block.getState() instanceof Skull){
 			Skull skull = (Skull) block.getState();
-			if (skull.getOwningPlayer() == Bukkit.getOfflinePlayer(UUID.fromString("c7c92b81-3987-4220-9069-207790a780d7"))) {
+			if (matchingSkull(skull, "c7c92b81-3987-4220-9069-207790a780d7")) {
 				//Hydrogen
 				loc.getBlock().setType(Material.WATER);
-			} else if (skull.getOwningPlayer() == Bukkit.getOfflinePlayer(UUID.fromString("872b4a42-d467-459f-bcbb-51564bfc9d66"))) {
+			} else if (matchingSkull(skull,"872b4a42-d467-459f-bcbb-51564bfc9d66")) {
 				//Helium, Do nothing.
-			} else if (skull.getOwningPlayer() == Bukkit.getOfflinePlayer(UUID.fromString("55b456f4-2723-4b57-b31d-6b5dc947606e"))) {
+			} else if (matchingSkull(skull, "55b456f4-2723-4b57-b31d-6b5dc947606e")) {
 				//Lithium
 				loc.getBlock().getRelative(BlockFace.DOWN).setType(Material.FIRE);
-			} else if (skull.getOwningPlayer() == Bukkit.getOfflinePlayer(UUID.fromString("37835b88-4e7c-456b-8b8f-b4fbf80fce8e"))) {
-				//Beryllium
-			} else if (skull.getOwningPlayer() == Bukkit.getOfflinePlayer(UUID.fromString("37835b88-4e7c-456b-8b8f-b4fbf80fce8e"))) {
-				//Do nothing
-			}else if (skull.getOwningPlayer() == Bukkit.getOfflinePlayer(UUID.fromString("462bafcf-023f-4bc6-8be9-0b924e8b11db"))) {
+			} else if (matchingSkull(skull, "37835b88-4e7c-456b-8b8f-b4fbf80fce8e")) {
+				//Beryllium, Do Nothing
+			} else if (matchingSkull(skull, "37835b88-4e7c-456b-8b8f-b4fbf80fce8e")) {
+				//Boron, Do nothing
+			} else if (matchingSkull(skull, "462bafcf-023f-4bc6-8be9-0b924e8b11db")) {
+				//Diamond, Drop a Diamond 
 				ItemStack item = new ItemStack(Material.DIAMOND);
 				loc.getWorld().dropItemNaturally(loc, item);
-			} else if (skull.getOwningPlayer() == Bukkit.getOfflinePlayer(UUID.fromString("045f2cef-4771-493c-9e92-f71d540f6669"))) {
+			} else if (matchingSkull(skull, "045f2cef-4771-493c-9e92-f71d540f6669")) {
+				//Coal, Drop a Coal 
 				ItemStack item = new ItemStack(Material.COAL);
 				loc.getWorld().dropItemNaturally(loc, item);
-			} else if (skull.getOwningPlayer() == Bukkit.getOfflinePlayer(UUID.fromString("30ca6346-23ae-464d-b8e3-176097f6c3ad"))) {
-				//Do nothing.
-			} else if (skull.getOwningPlayer() == Bukkit.getOfflinePlayer(UUID.fromString("1948139d-0f97-44a2-a675-e798af812ce5"))) {
-				//Do nothing.
-			} else if (skull.getOwningPlayer() == Bukkit.getOfflinePlayer(UUID.fromString("4f1c308a-8b98-480d-8e40-a53acb16118c"))) {
-				if (loc.getBlock().getBiome() == Biome.DESERT || loc.getBlock().getBiome() == Biome.DESERT_HILLS || loc.getBlock().getBiome() == Biome.DESERT_LAKES) {
-					loc.getBlock().getRelative(BlockFace.DOWN).setType(Material.FIRE);
-				} else {
-					//Do nothing.
-				}
-			} else if (skull.getOwningPlayer() == Bukkit.getOfflinePlayer(UUID.fromString("8c30208d-861a-4962-ba53-066bca3219b8"))) {
+			} else if (matchingSkull(skull, "30ca6346-23ae-464d-b8e3-176097f6c3ad")) {
+				//Nitrogen, Do nothing.
+			} else if (matchingSkull(skull, "1948139d-0f97-44a2-a675-e798af812ce5")) {
+				//Oxygen, Do nothing.
+			} else if (matchingSkull(skull, "9edde086-69d3-4341-a725-4d10eed1eaf1")) {
+				//Fluorine, Do nothing
+			} else if (matchingSkull(skull, "4f1c308a-8b98-480d-8e40-a53acb16118c")) {
+				//Neon, Do nothing
+			} else if (matchingSkull(skull, "c87510d0-0a78-43a1-bab3-c3c479aacc97")) {
+				//Sodium
+				loc.getWorld().createExplosion(loc, 4F);
+			} else if (matchingSkull(skull, "8c30208d-861a-4962-ba53-066bca3219b8")) {
 				//Magnesium
 				loc.getBlock().getRelative(BlockFace.DOWN).setType(Material.FIRE);
+			} else if (matchingSkull(skull, "e191a8f3-5a26-4c3b-9265-33f53ee994e5")) {
+				//Aluminum
+			} else if (matchingSkull(skull, "7673abcb-6046-4729-92a6-1ce11df607ca")) {
+				//Silicon
+			} else if (matchingSkull(skull, "d7221687-b882-4003-aaa9-d5b8f97395b8")) {
+				//Red Phosphorus
+			} else if (matchingSkull(skull, "41bcc900-b359-405c-ac50-fdecc489673f")) {
+				//White Phosphorus
+				loc.getBlock().getRelative(BlockFace.DOWN).setType(Material.FIRE);
+			} else if (matchingSkull(skull, "e6e33873-09e9-40fe-9aff-cfaca7f8fe03")) {
+				//Black Phosphorus
+			} else if (matchingSkull(skull, "f98f76cd-2f10-4881-9b7d-6a877f5843a4")) {
+				//Violet Phosphorus
+			} else if (matchingSkull(skull, "b45da052-c66f-4e98-b472-8a4994d5a945")) {
+				//Sulfur
+			} else if (matchingSkull(skull, "1e91d917-e774-4ba8-8495-f0f6d4925276")) {
+				//Chlorine
+			} else if (matchingSkull(skull, "713711b2-4fa9-4745-9418-ac250bbbcf40")) {
+				//Argon
+			} else if (matchingSkull(skull, "b088e244-cf5d-4de5-87a9-73f17d379f39")) {
+				//Potassium
+				loc.getWorld().createExplosion(loc, 5F);
+			} else if (matchingSkull(skull, "081710cc-0883-4d36-a63c-c9f4f8869881")) {
+				//Calcium
+			} else if (matchingSkull(skull, "26b8c131-f488-48f1-86cb-a25592534528")) {
+				//Scandium
+			} else if (matchingSkull(skull, "033ce3ca-37a5-4067-9cc8-81926c23a789")) {
+				//Titanium
+			} else if (matchingSkull(skull, "59b9ba96-cc56-424f-9b5b-59aef4fd86c5")) {
+				//Vanadium
+			} else if (matchingSkull(skull, "8e0a90b8-6aba-4e81-8e17-5e6beacc703c")) {
+				//Maganese
+			} else if (matchingSkull(skull, "682f330e-9dbf-4510-bc1e-518e309413c0")) {
+				//Iron
+				ItemStack drops = new ItemStack(Material.IRON_INGOT);
+				loc.getWorld().dropItemNaturally(loc, drops);
+			} else if (matchingSkull(skull, "c90250a1-7bf7-44dd-8eae-d515947aec3f")) {
+				//Cobalt
+			} else if (matchingSkull(skull, "dedc5d1a-0ecc-4a2a-b580-8e020fdda1a9")) {
+				//Nickel
+			} else if (matchingSkull(skull, "c108f139-5a7a-4685-bf64-59e72bc89d19")) {
+				//Copper
+			} else if (matchingSkull(skull, "ea331551-27a1-4573-a881-114098e48f87")) {
+				//Zinc
+			} else if (matchingSkull(skull, "350a668c-869d-4633-a9a3-ab789e30e330")){
+				//Gallium
+			} else if (matchingSkull(skull, "350a668c-869d-4633-a9a3-ab789e30e330")) {
+				//Gray Arsenic
+			} else if (matchingSkull(skull, "07d96959-f564-40b4-8555-ddc9def9cd3c")) {
+				//Black Arsenic
+			} else if (matchingSkull(skull, "75ed9df9-9a81-49d6-8660-9b2621edae37")) {
+				//Black Selenium
+			} else if (matchingSkull(skull, "ad5bcded-7f16-4b71-be7a-0d536f8fa9c1")) {
+				//Red Selenium
+			} else if (matchingSkull(skull, "bf7c4680-5289-4953-a7c3-113d6f107823")) {
+				//Bromine
+			} else if (matchingSkull(skull, "9405125f-4433-4a8d-9933-b479b1a9917f")) {
+				//Krypton
+			} else if (matchingSkull(skull, "ef12dceb-cbeb-4eed-b4d1-21b8d71a32aa")) {
+				//Rubidium
+				loc.getBlock().getRelative(BlockFace.DOWN).setType(Material.FIRE);
+			} else if (matchingSkull(skull, "a6d126ac-f3bd-496e-8583-b396662346e9")) {
+				//Strontium
+			} else if (matchingSkull(skull, "31470eaf-3a9c-4027-8975-0be67e756751")) {
+				//Yttrium
+			} else if (matchingSkull(skull, "03123afd-7c4c-4deb-b696-3fa5ab423850")) {
+				//Zirconium
+			} else if (matchingSkull(skull, "df6da10d-28ba-41e1-8c0a-e36587a2e06a")) {
+				//Niobium
+			} else if (matchingSkull(skull, "6f33ffbd-b5f1-4246-baef-59debe843629")) {
+				//Molybdenum
+			} else if (matchingSkull(skull, "7b901927-0510-41fa-be28-f9cbc417224f")) {
+				//Technetium
+			} else if (matchingSkull(skull, "ae24cf09-a760-47e6-8a30-493609ec974a")) {
+				//Ruthenium
+			} else if (matchingSkull(skull, "144c0f29-9bf7-47e9-9768-ad1a02dcc335")) {
+				//Rhodium
+			} else if (matchingSkull(skull, "14988e95-c118-4e97-b002-7dc87e366476")) {
+				//Palladium
+				loc.getBlock().getRelative(BlockFace.DOWN).setType(Material.FIRE);
+			} else if (matchingSkull(skull, "0df967eb-90de-4c68-9773-7cdcc0818ec7")) {
+				//Silver
+			} else if (matchingSkull(skull, "5fd14dea-a82e-41c7-bfaa-95a923c8e4b9")) {
+				loc.getBlock().getRelative(BlockFace.DOWN).setType(Material.FIRE);
+			} else if (matchingSkull(skull, "c22d52c8-f8bb-427b-ad72-7c27f6f2bf1d")) {
+				//Indium
+			} else if (matchingSkull(skull, "9f0ac83d-47aa-4112-935d-3832ec8de884")) {
+				//Tin
+			} else if (matchingSkull(skull, "9f0ac83d-47aa-4112-935d-3832ec8de884")) {
+				//Antimony
+			} else if (matchingSkull(skull, "2fee09f9-d0e8-4324-a74e-0b240fac7860")) {
+				//Tellurium
+			} else if (matchingSkull(skull, "25d5f4f7-b6dd-4cca-9c59-19d79b9a984c")) {
+				//Iodine
+			} else if (matchingSkull(skull, "d2524eee-64c7-425c-b50d-5062379090e9")) {
+				//Xenon
+			} else if (matchingSkull(skull, "11baba35-d7bc-473d-8260-865f24004a32")) {
+				//Cesium
+				loc.getWorld().createExplosion(loc, 6F);
+			} else if (matchingSkull(skull, "aa98d0be-dade-409f-91af-d4b42b6519d2")) {
+				//Barium
+			} else if (matchingSkull(skull, "fa281ffa-bef9-43d0-941f-c1496c9a03a3")) {
+				//Lanthanum
+			} else if (matchingSkull(skull, "ba7d4bad-6ac1-4fa2-951b-77a7226d5489")) {
+				//Praseodynium
+			} else if (matchingSkull(skull, "e0dedacb-3a86-4ef5-b36d-663179968ddb")) {
+				//Neodynium
+			} else if (matchingSkull(skull, "73d6c0b9-5b9a-4da6-88fa-f2f15871555d")) {
+				//Promethium
+			} else if (matchingSkull(skull, "92ea9475-ef82-44be-8338-7e3fcc968379")) {
+				//Samarium
+			} else if (matchingSkull(skull, "cb4606a5-56ef-4f24-8ece-2ac54fc81e69")) {
+				//Europium
+			} else if (matchingSkull(skull, "84c3ab19-3b81-4424-bc18-2ff2a2d03e8e")) {
+				//Gadolinium
+			} else if (matchingSkull(skull, "19f8caf4-06cc-4db1-836c-7df7467d45af")) {
+				//Terbium
+			} else if (matchingSkull(skull, "776c8a3f-9115-44a3-9de8-45e081491637")) {
+				//Dysprosium
+			} else if (matchingSkull(skull, "6aadbc7d-7493-4194-aea0-f8b774bd3c02")) {
+				//Holmium
+			} else if (matchingSkull(skull, "6aadbc7d-7493-4194-aea0-f8b774bd3c02")) {
+				//Erbium
+			} else if (matchingSkull(skull, "5416a8dd-e18d-4ee5-9a2c-ee4ca765c8f5")) {
+				//Thulium
+			} else if (matchingSkull(skull, "41a67856-4e22-4bf4-99c0-a774190cf2c9")) {
+				//Ytterbium
+			} else if (matchingSkull(skull, "8b5e0c6f-8d33-4813-8371-06330ab91c38")) {
+				//Lutetium
+			} else if (matchingSkull(skull, "ca93e099-bedd-4903-8d92-dc7d5cf85416")) {
+				//Hafnium
+			} else if (matchingSkull(skull, "39925028-8660-47d9-91a4-e662f3f9dbf9")) {
+				//Tantalum
+			} else if (matchingSkull(skull, "b62899d3-a0e5-46fd-a12f-f7bc7fc6547b")) {
+				//Tungsten
+			} else if (matchingSkull(skull, "80dbb5fc-bd98-4c27-81ff-70543799caf9")) {
+				//Rhenium
+			} else if (matchingSkull(skull, "846348b3-b1e1-4c05-8eb6-cbd0b4bd41ca")) {
+				//Osmium
+			} else if (matchingSkull(skull, "2b65f243-b56b-45be-ac49-cb1d55864d20")) {
+				//Iridium
+			} else if (matchingSkull(skull, "86d4ae4b-947f-48f0-bf0b-5d22151cb3d1")) {
+				//Platinum
+			} else if (matchingSkull(skull, "86d4ae4b-947f-48f0-bf0b-5d22151cb3d1")) {
+				//Gold
+				ItemStack gold = new ItemStack(Material.GOLD_INGOT);
+				loc.getWorld().dropItemNaturally(loc, gold);
+			} else if (matchingSkull(skull, "90fa6bf9-6576-41ce-a61c-900af847438e")) {
+				//Mercury
+			} else if (matchingSkull(skull, "24af4110-fb4f-4f15-9956-82c9bad2a8b6")) {
+				//Thallium
+			} else if (matchingSkull(skull, "e0fafa83-a0fc-450d-a48f-d8e761dcf3b3")) {
+				//Lead
+			} else if (matchingSkull(skull, "28fd0ce3-f59c-4d03-bbb5-56f9d863fe71")) {
+				//Bismuth
+				loc.getBlock().getRelative(BlockFace.DOWN).setType(Material.FIRE);
+			} else if (matchingSkull(skull, "9b8085e0-c53d-49e5-ab2f-f4de5eca1029")) {
+				//Polonium
+				loc.getBlock().getRelative(BlockFace.DOWN).setType(Material.FIRE);
+			} else if (matchingSkull(skull, "f03f0f3d-1340-4e24-853e-6fec4d50cf37")) {
+				//Astatine
+			} else if (matchingSkull(skull, "00ebbe6e-7656-40f9-97f1-c9b2e36d4e46")) {
+				//Radium
+				loc.getBlock().getRelative(BlockFace.DOWN).setType(Material.FIRE);
+			} else if (matchingSkull(skull, "7517c8d0-65d7-47ac-ad64-a5632bfcde55")) {
+				//Radium
+			} else if (matchingSkull(skull, "d1734d1c-b6cf-4a45-b666-b575f5b82aac")) {
+				//Actinium
+			} else if (matchingSkull(skull, "52d46db8-6c71-480c-9ac0-df43ae5def91")) {
+				//Thorium
+				loc.getBlock().getRelative(BlockFace.DOWN).setType(Material.FIRE);
+			} else if (matchingSkull(skull, "f84c98e6-6346-46db-9f49-ac97e43e4d59")) {
+				//Protactinium
+			} else if (matchingSkull(skull, "3bf8b261-1d16-4481-ad92-82cdcf3c6ba2")) {
+				//Uranium
 			}
 		}
 	}
