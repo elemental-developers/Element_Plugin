@@ -57,6 +57,8 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 
 public final class Main extends JavaPlugin implements Listener{
+	static private JsonParser parser = new JsonParser();
+    static private String API_PROFILE_LINK = "https://sessionserver.mojang.com/session/minecraft/profile/";
 	public boolean giveElement(ChatColor color, String element, CommandSender sender, String[] args, UUID id, String UsernametoGet, String OverwriteURL) {
 		if(!checkPlayer(sender) && args.length == 0) {
 			sender.sendMessage(ChatColor.GOLD + "[BOT]" + ChatColor.WHITE + " Charles: This command with no arguments can only be used by a player! D:");
@@ -120,9 +122,7 @@ public final class Main extends JavaPlugin implements Listener{
         return skull;
     }
 	//https://www.spigotmc.org/threads/offlineplayer-game-profile.234998/#post-2373355
-	static private JsonParser parser = new JsonParser();
-    static private String API_PROFILE_LINK = "https://sessionserver.mojang.com/session/minecraft/profile/";
-    public static String getSkinUrl(String uuid){
+	public static String getSkinUrl(String uuid){
     		if (uuid == null||uuid.isEmpty()) {
     			throw new NullPointerException("Username cannot be null");
     		}
