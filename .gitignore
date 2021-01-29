@@ -1,14 +1,15 @@
 # Compiled class file
 *.class
 # Eclipse files
-/.settings
+./.settings/*
 .project
 # Log file
 *.log
 
 # BlueJ files
 *.ctxt
-
+# Doc files
+./doc/*
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
