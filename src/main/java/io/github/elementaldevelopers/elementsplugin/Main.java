@@ -375,13 +375,13 @@ public final class Main extends JavaPlugin implements Listener{
 			return giveElement(ChatColor.GRAY, "Uranium", sender, args, UUID.fromString("3bf8b261-1d16-4481-ad92-82cdcf3c6ba2"), "", "todotodo");
 		} else if (command(cmd, "summonNeptunium")) {
 			return giveElement(ChatColor.GRAY, "Neptunium", sender, args, UUID.fromString("eb30eef4-bd67-446e-bae5-a8c2aef306dd"), "", "todotodo");
-		} else if (command(cmd, "summonPlutonium")) {
-			return giveElement(ChatColor.GRAY, "Plutonium", sender, args, UUID.fromString("9866e791-29a6-47d2-8a5c-222d68f060e1"), "", "todotodo");
-		} else if (command(cmd, "summonAmericium")) {
-			return giveElement(ChatColor.GRAY, "Americium", sender, args, UUID.fromString("633d27d9-16bc-4f1d-86de-81a8319ffdfa"), "", "todotodo");
-		} else if (command(cmd, "summonCurium")) {
-			return giveElement(ChatColor.GRAY, "Curium", sender, args, UUID.fromString("1f24c146-3b18-4ece-990b-414e78e4485a"), "", "todotodo");
-		}// else if (command(cmd, "summonBerkelium")) {
+//		} else if (command(cmd, "summonPlutonium")) {
+//			return giveElement(ChatColor.GRAY, "Plutonium", sender, args, UUID.fromString("9866e791-29a6-47d2-8a5c-222d68f060e1"), "", "todotodo");
+//		} else if (command(cmd, "summonAmericium")) {
+//			return giveElement(ChatColor.GRAY, "Americium", sender, args, UUID.fromString("633d27d9-16bc-4f1d-86de-81a8319ffdfa"), "", "todotodo");
+//		} else if (command(cmd, "summonCurium")) {
+//			return giveElement(ChatColor.GRAY, "Curium", sender, args, UUID.fromString("1f24c146-3b18-4ece-990b-414e78e4485a"), "", "todotodo");
+//		}// else if (command(cmd, "summonBerkelium")) {
 //			return giveElement(ChatColor.RESET, "Berkelium", sender, args, UUID.fromString("80ca88e2-d9c1-4665-a4b7-450409a373a3"), "", "todotodo");
 //		} else if (command(cmd, "summonCalifornium")) {
 //			return giveElement(ChatColor.RESET, "Californium", sender, args, UUID.fromString("ee729053-cbaf-48ac-aeea-6c8bad08668c"), "", "todotodo");
