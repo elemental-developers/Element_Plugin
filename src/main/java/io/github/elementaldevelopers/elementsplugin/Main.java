@@ -282,25 +282,25 @@ public final class Main extends JavaPlugin implements Listener{
 		} else if (command(cmd, "summonPalladium")) {
 			return giveElement(ChatColor.GRAY, "Palladium", sender, args, UUID.fromString("14988e95-c118-4e97-b002-7dc87e366476"), "", "https://textures.minecraft.net/texture/cd61a456567f2ce378ec441541210bdb01202a1f6abb04992114f47d2146cad5");
 		} else if (command(cmd, "summonSilver")) {
-			return giveElement(ChatColor.GRAY, "Silver", sender, args, UUID.fromString("0df967eb-90de-4c68-9773-7cdcc0818ec7"), "", "todotodo");
+			return giveElement(ChatColor.GRAY, "Silver", sender, args, UUID.fromString("0df967eb-90de-4c68-9773-7cdcc0818ec7"), "", "https://textures.minecraft.net/texture/d85b68901e8ea39085cdd8a39700fb2b7d73e7aff80b9d2a1a3d2de09175bcaddo");
 		} else if (command(cmd, "summonCadmium")) {
-			return giveElement(ChatColor.GRAY, "Cadmium", sender, args, UUID.fromString("5fd14dea-a82e-41c7-bfaa-95a923c8e4b9"), "", "todotodo");
+			return giveElement(ChatColor.GRAY, "Cadmium", sender, args, UUID.fromString("5fd14dea-a82e-41c7-bfaa-95a923c8e4b9"), "", "https://textures.minecraft.net/texture/b5f880eed48d519850adcf7c425a2317c73de2d60f3746030c3515b3b815a7ea");
 		} else if (command(cmd, "summonIndium")) {
-			return giveElement(ChatColor.GRAY, "Indium", sender, args, UUID.fromString("c22d52c8-f8bb-427b-ad72-7c27f6f2bf1d"), "", "todotodo");
+			return giveElement(ChatColor.GRAY, "Indium", sender, args, UUID.fromString("c22d52c8-f8bb-427b-ad72-7c27f6f2bf1d"), "", "https://textures.minecraft.net/texture/57e7ba1fc30c584711da63dabea71036a0f482c57d9a382a31d74b967bc79531");
 		} else if (command(cmd, "summonTin")) {
-			return giveElement(ChatColor.GRAY, "Tin", sender, args, UUID.fromString("9f0ac83d-47aa-4112-935d-3832ec8de884"), "", "todotodo");
+			return giveElement(ChatColor.GRAY, "Tin", sender, args, UUID.fromString("9f0ac83d-47aa-4112-935d-3832ec8de884"), "", "https://textures.minecraft.net/texture/f847a31d7236fd6ba3a3b57cba44d55fc98e2ac0699137865cff03da87de1f5a");
 		} else if (command(cmd, "summonAntimony")) {
-			return giveElement(ChatColor.GRAY, "Antimony", sender, args, UUID.fromString("032c85e7-fd31-45a9-b41c-6f34f783cd68"), "", "todotodo");
+			return giveElement(ChatColor.GRAY, "Antimony", sender, args, UUID.fromString("032c85e7-fd31-45a9-b41c-6f34f783cd68"), "", "https://textures.minecraft.net/texture/b5f880eed48d519850adcf7c425a2317c73de2d60f3746030c3515b3b815a7ea");
 		} else if (command(cmd, "summonTellurium")) {
 			return giveElement(ChatColor.GRAY, "Tellurium", sender, args, UUID.fromString("2fee09f9-d0e8-4324-a74e-0b240fac7860"), "", "todotodo");
 		} else if (command(cmd, "summonIodine")) {
-			return giveElement(ChatColor.GRAY, "Iodine", sender, args, UUID.fromString("25d5f4f7-b6dd-4cca-9c59-19d79b9a984c"), "", "todotodo");
+			return giveElement(ChatColor.GRAY, "Iodine", sender, args, UUID.fromString("25d5f4f7-b6dd-4cca-9c59-19d79b9a984c"), "", "https://textures.minecraft.net/texture/a3ea1888d9b9dc9ca13e4da2e550707d6fa49d42a716bda59bb4a8a6446e3e30");
 		} else if (command(cmd, "summonXenon")) {
-			return giveElement(ChatColor.BLACK, "Xenon", sender, args, UUID.fromString("d2524eee-64c7-425c-b50d-5062379090e9"), "", "todotodo");
+			return giveElement(ChatColor.BLACK, "Xenon", sender, args, UUID.fromString("d2524eee-64c7-425c-b50d-5062379090e9"), "", "https://textures.minecraft.net/texture/de4ba7d405c91da2f4b90dd80f74d8ee7ea316915cb03cf5b32ce6694a997a3a");
 		} else if (command(cmd, "summonCesium")) {
-			return giveElement(ChatColor.GRAY, "Cesium", sender, args, UUID.fromString("11baba35-d7bc-473d-8260-865f24004a32"), "", "todotodo");
+			return giveElement(ChatColor.GRAY, "Cesium", sender, args, UUID.fromString("11baba35-d7bc-473d-8260-865f24004a32"), "", "https://textures.minecraft.net/texture/99e37aae797a262590ad516c5b066b92b5d4e62cfcf42c02427ae43230179b2b");
 		} else if (command(cmd, "summonBarium")) {
-			return giveElement(ChatColor.GRAY, "Barium", sender, args, UUID.fromString("aa98d0be-dade-409f-91af-d4b42b6519d2"), "", "todotodo");
+			return giveElement(ChatColor.GRAY, "Barium", sender, args, UUID.fromString("aa98d0be-dade-409f-91af-d4b42b6519d2"), "", "https://textures.minecraft.net/texture/b4dd088c002e46a8f468e7699656a132ab490b87947578e3dcd4ba38a9c8d7");
 		} else if (command(cmd, "summonLanthanum")) {
 			return giveElement(ChatColor.GRAY, "Lanthanum", sender, args, UUID.fromString("fa281ffa-bef9-43d0-941f-c1496c9a03a3"), "", "todotodo");
 		} else if (command(cmd, "summonCerium")) {
@@ -346,7 +346,7 @@ public final class Main extends JavaPlugin implements Listener{
 		} else if (command(cmd, "summonPlatinum")) {
 			return giveElement(ChatColor.GRAY, "Platinum", sender, args, UUID.fromString("daedbb76-5145-406c-86f6-798441ead560"), "", "todotodo");
 		} else if (command(cmd, "summonGold")) {
-			return giveElement(ChatColor.GOLD, "Gold", sender, args, UUID.fromString("86d4ae4b-947f-48f0-bf0b-5d22151cb3d1"), "", "todotodo");
+			return giveElement(ChatColor.GOLD, "Gold", sender, args, UUID.fromString("86d4ae4b-947f-48f0-bf0b-5d22151cb3d1"), "", "https://textures.minecraft.net/texture/da778ab8b98f321be8510238040bc5653347fa52ee10a8b060ddb766e507cc02");
 		} else if (command(cmd, "summonMercury")) {
 			return giveElement(ChatColor.GRAY, "Mercury", sender, args, UUID.fromString("90fa6bf9-6576-41ce-a61c-900af847438e"), "", "todotodo");
 		} else if (command(cmd, "summonThallium")) {
@@ -354,9 +354,9 @@ public final class Main extends JavaPlugin implements Listener{
 		} else if (command(cmd, "summonLead")) {
 			return giveElement(ChatColor.GRAY, "Lead", sender, args, UUID.fromString("e0fafa83-a0fc-450d-a48f-d8e761dcf3b3"), "", "todotodo");
 		} else if (command(cmd, "summonBismuth")) {
-			return giveElement(ChatColor.GRAY, "Bismuth", sender, args, UUID.fromString("28fd0ce3-f59c-4d03-bbb5-56f9d863fe71"), "", "todotodo");
+			return giveElement(ChatColor.GRAY, "Bismuth", sender, args, UUID.fromString("28fd0ce3-f59c-4d03-bbb5-56f9d863fe71"), "", "https://textures.minecraft.net/texture/5abb1fa47fe3dc76ec88614b4eb7645e8e88fcf36bb62bc2bfdd17ede7502dd1");
 		} else if (command(cmd, "summonPolonium")) {
-			return giveElement(ChatColor.GRAY, "Polonium", sender, args, UUID.fromString("9b8085e0-c53d-49e5-ab2f-f4de5eca1029"), "", "todotodo");
+			return giveElement(ChatColor.GRAY, "Polonium", sender, args, UUID.fromString("9b8085e0-c53d-49e5-ab2f-f4de5eca1029"), "", "https://textures.minecraft.net/texture/f2fd2df280e9e9529ba981f4f79b8392e4fd74d2edc3896b621b0fa4015b9e86");
 		} else if (command(cmd, "summonAstatine")) {
 			return giveElement(ChatColor.GRAY, "Astatine", sender, args, UUID.fromString("f03f0f3d-1340-4e24-853e-6fec4d50cf37"), "", "todotodo");
 		} else if (command(cmd, "summonRadon")) {
@@ -364,11 +364,11 @@ public final class Main extends JavaPlugin implements Listener{
 		} else if (command(cmd, "summonFrancium")) {
 			return giveElement(ChatColor.GRAY, "Francium", sender, args, UUID.fromString("00ebbe6e-7656-40f9-97f1-c9b2e36d4e46"), "", "todotodo");
 		} else if (command(cmd, "summonRadium")) {
-			return giveElement(ChatColor.GRAY, "Radium", sender, args, UUID.fromString("7517c8d0-65d7-47ac-ad64-a5632bfcde55"), "", "todotodo");
+			return giveElement(ChatColor.GRAY, "Radium", sender, args, UUID.fromString("7517c8d0-65d7-47ac-ad64-a5632bfcde55"), "", "https://textures.minecraft.net/texture/3e1244801e11772f54e90c26180a1a584a85e4a24dbc11a8f8a29b75f1e245a7");
 		} else if (command(cmd, "summonActinium")) {
 			return giveElement(ChatColor.GRAY, "Actinium", sender, args, UUID.fromString("d1734d1c-b6cf-4a45-b666-b575f5b82aac"), "", "todotodo");
 		} else if (command(cmd, "summonThorium")) {
-			return giveElement(ChatColor.GRAY, "Thorium", sender, args, UUID.fromString("52d46db8-6c71-480c-9ac0-df43ae5def91"), "", "todotodo");
+			return giveElement(ChatColor.GRAY, "Thorium", sender, args, UUID.fromString("52d46db8-6c71-480c-9ac0-df43ae5def91"), "", "https://textures.minecraft.net/texture/1f46c0cf082a092832f0d67fa5051a5ca05ec21bd560552169fa6cce6939ea85");
 		} else if (command(cmd, "summonProtactinium")) {
 			return giveElement(ChatColor.GRAY, "Protactinium", sender, args, UUID.fromString("f84c98e6-6346-46db-9f49-ac97e43e4d59"), "", "todotodo");
 		} else if (command(cmd, "summonUranium")) {
