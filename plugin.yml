@@ -36,8 +36,6 @@ permissions:
    ElementPlugin.*:
      description: Gives access to all elementsplugin commands
      default: op
-     children:
-       ElementPlugin.summonhydrogen: true
    ElementPlugin.summonhydrogen:
       description: Summons a Hydrogen block!
       default: op
