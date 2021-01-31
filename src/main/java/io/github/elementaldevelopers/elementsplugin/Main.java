@@ -198,15 +198,15 @@ public final class Main extends JavaPlugin implements Listener{
 		} else if (command(cmd, "summonNeon")) {
 			return giveElement(ChatColor.RED, "Neon", sender, args, UUID.fromString("4f1c308a-8b98-480d-8e40-a53acb16118c"), "", "https://textures.minecraft.net/texture/9de58dc6c363b1ce4f1a5c2e02c51f97c5316b5b6e7cccaf4575b8eb1ff51b68");
 		} else if (command(cmd, "summonSodium")) {
-			return giveElement(ChatColor.GRAY, "Sodium", sender, args, UUID.fromString("c87510d0-0a78-43a1-bab3-c3c479aacc97"), "", "http://textures.minecraft.net/texture/eb1fa631faa2afe9be65bb6bce8c26781add0fc271bb4cfd52a97bdc891882d3");
+			return giveElement(ChatColor.GRAY, "Sodium", sender, args, UUID.fromString("c87510d0-0a78-43a1-bab3-c3c479aacc97"), "", "https://textures.minecraft.net/texture/450acad548b445da4afecae96c3ae14afed2cf038b1ce4cd013d298d6a293bb1");
 		} else if (command(cmd, "summonMagnesium")) {
-			return giveElement(ChatColor.GRAY, "Magnesium", sender, args, UUID.fromString("8c30208d-861a-4962-ba53-066bca3219b8"), "", "http://textures.minecraft.net/texture/f5ae6adcb7767999160e399ad77907b9d922393b552dfdd35372646f357e6924");
+			return giveElement(ChatColor.GRAY, "Magnesium", sender, args, UUID.fromString("8c30208d-861a-4962-ba53-066bca3219b8"), "", "http://textures.minecraft.net/texture/eb1fa631faa2afe9be65bb6bce8c26781add0fc271bb4cfd52a97bdc891882d3");
 		} else if (command(cmd, "summonAluminum")) {
 			return giveElement(ChatColor.GRAY, "Aluminum", sender, args, UUID.fromString("e191a8f3-5a26-4c3b-9265-33f53ee994e5"), "", "https://textures.minecraft.net/texture/96c18ebd6023915b4a542d37a565670bb23c84e316c2167d448ddab4c748098b ");
 		} else if (command(cmd, "summonSilicon")) {
 			return giveElement(ChatColor.GRAY, "Silicon", sender, args, UUID.fromString("7673abcb-6046-4729-92a6-1ce11df607ca"), "", "https://textures.minecraft.net/texture/b7b44563e06c2553f94709341e4110abed0e23ccc050a1e9f99243ef28173e51");
 		} else if (command(cmd, "summonVioletPhosphorus")) {
-			return giveElement(ChatColor.DARK_PURPLE, "Violet Phosphorus", sender, args, UUID.fromString("f98f76cd-2f10-4881-9b7d-6a877f5843a4"), "", "todotodo");
+			return giveElement(ChatColor.DARK_PURPLE, "Violet Phosphorus", sender, args, UUID.fromString("f98f76cd-2f10-4881-9b7d-6a877f5843a4"), "", "https://textures.minecraft.net/texture/ede2c014a7a812f91e0339665513ea4b23f4554e3bded69918708868d4f441ef");
 		} else if (command(cmd, "summonRedPhosphorus")) {
 			return giveElement(ChatColor.RED, "Red Phosphorus", sender, args, UUID.fromString("d7221687-b882-4003-aaa9-d5b8f97395b8"), "", "https://textures.minecraft.net/texture/ea13c7d32660e239dfc40c8d226acfcb2581f9922987b5e1f7d482bb4e7e6370");
 		} else if (command(cmd, "summonWhitePhosphorus")) {
